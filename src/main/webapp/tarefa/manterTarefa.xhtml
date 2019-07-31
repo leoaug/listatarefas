@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:head>
+	
+		<meta name="generator" content="JSF" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="author" content="BB Tecnologia e Serviços" />
+	
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta http-equiv="cache-control" content="no-store, no-cache, must-revalidate" />
+		<meta http-equiv="cache-control" content="post-check=0, pre-check=0" />
+		<meta http-equiv="expires" content="0" />
+		<meta http-equiv="pragma" content="no-cache" />
+		
+	
+		<title>Tarefas</title>
+	
+		
+	</h:head>
+	
+	<h:body styleClass="w3-grey-l5">
+		
+		 <p:tabView> 
+        	
+        	<p:tab title=".:: Cadastro de Tarefas ::.">        	
+        		<h:form>
+					<div class="ui-fluid">
+						<p:panelGrid columns="4" columnClasses="ui-g-12 ui-md-2,ui-g-12 ui-md-4,ui-g-12 ui-md-2,ui-g-12 ui-md-4" layout="grid" styleClass="ui-panelgrid-blank ui-fluid">
+				            <p:outputLabel for="nomeTarefa" value="Nome"/>
+				            <p:inputText id="nomeTarefa" value="#{cadastrarTarefaController.tarefaDTO.entidade.nome}"/>
+					
+							<p:outputLabel for="dataInicioTarefa" value="Data Início"/>
+				            <p:calendar id="nomeTarefa" value="#{cadastrarTarefaController.tarefaDTO.entidade.dataInicio}"/>
+					
+							<p:outputLabel for="dataFimTarefa" value="Data Fim"/>
+				            <p:calendar id="dataFimTarefa" value="#{cadastrarTarefaController.tarefaDTO.entidade.dataInicio}"/>
+					
+							<p:outputLabel for="selectUsuario" value="Usuario"/>
+							<p:selectOneMenu id="selectUsuario" value="#{cadastrarTarefaController.usuarioDTO.entidade}">
+								<f:selectItems var="usuario" 
+											   itemLabel="#{usuario.ome}" 
+											   itemValue="" 
+											   value="#{cadastrarTarefaController.usuarioDTO.entidades}" />
+							</p:selectOneMenu>
+					
+						</p:panelGrid>
+						<p:commandButton value="Teste" action="#{cadastrarTarefaController.salvarTarefa}" />
+						
+					</div>					
+				</h:form>
+	        	
+	        	</p:tab>
+	        	
+        	<p:tab title=".:: Visualizar Tarefas ::.">
+        	</p:tab>
+        	
+        </p:tabView>
+		
+	</h:body>
+	</html>
+	
+	
